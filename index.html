@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Enhancer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Image<span>Enhancer</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Demo</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">
+                &#9776;
+            </button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-background" aria-hidden="true">
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
+            <div class="scan-lines"></div>
+            <div class="ai-lines"></div>
+            <div class="particle-layer">
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+                <span class="particle"></span>
+            </div>
+        </div>
+
+        <div class="hero-content fade-in">
+
+            <p class="hero-kicker">Professional Image Enhancement Studio</p>
+
+            <h1>
+                Enhance Image
+                <span>With Professional Quality</span>
+            </h1>
+
+            <p>
+                Restore details, sharpen blurry photos,
+                improve colors and bring images back to life
+                using advanced image processing and enhancement technology.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#demo" class="btn primary-btn">
+                    View Demo
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Get Started
+                </a>
+            </div>
+
+            <div class="hero-micro-stats">
+                <div>
+                    <strong>4X</strong>
+                    <span>resolution upscaling</span>
+                </div>
+
+                <div>
+                    <strong>12s</strong>
+                    <span>average enhancement time</span>
+                </div>
+
+                <div>
+                    <strong>98%</strong>
+                    <span>clarity recovery</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="hero-card fade-in">
+
+            <div class="card-header">
+                <div>
+                    <p class="card-eyebrow">Enhancement Preview</p>
+                    <h3>Live Enhancement Pass</h3>
+                </div>
+
+                <span class="live-badge">Processing</span>
+            </div>
+
+            <div class="preview-box">
+
+                <article class="preview-item">
+                    <div class="preview-image">
+                        <img
+                            src="before.jpg"
+                            alt="Before enhancement preview"
+                            data-role="before"
+                            loading="lazy"
+                        >
+
+                        <span class="preview-badge">Before</span>
+                    </div>
+
+                    <div class="preview-copy">
+                        <h4>Low-light Capture</h4>
+                        <p>Soft edges, visible grain and muted tones.</p>
+
+                        <div class="preview-meta">
+                            <span>63% clarity</span>
+                            <span>1.8 MP</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="preview-item">
+                    <div class="preview-image">
+                        <img
+                            src="after.jpg"
+                            alt="After enhancement preview"
+                            data-role="after"
+                            loading="lazy"
+                        >
+
+                        <span class="preview-badge preview-badge-after">After</span>
+                    </div>
+
+                    <div class="preview-copy">
+                        <h4>Enhanced Output</h4>
+                        <p>Sharper textures with recovered color balance.</p>
+
+                        <div class="preview-meta">
+                            <span>98% clarity</span>
+                            <span>4X upscale</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BEFORE AFTER -->
+    <section class="comparison-section" id="demo">
+
+        <div class="section-title fade-in">
+            <h2>Before &amp; After Comparison</h2>
+            <p>Drag the divider to compare image enhancement results.</p>
+        </div>
+
+        <div class="comparison-shell fade-in">
+            <div class="comparison-container" id="comparisonContainer">
+
+                <img
+                    src="after.jpg"
+                    alt="Enhanced comparison image"
+                    data-role="after"
+                    class="comparison-image"
+                    loading="lazy"
+                >
+
+                <div class="before-image-wrapper">
+                    <img
+                        src="before.jpg"
+                        alt="Original comparison image"
+                        data-role="before"
+                        class="comparison-image"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="comparison-divider" id="comparisonDivider" aria-hidden="true">
+                    <span class="comparison-handle"></span>
+                </div>
+
+                <span class="comparison-label before-label">Before</span>
+                <span class="comparison-label after-label">After</span>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    id="slider"
+                    class="comparison-range"
+                    aria-label="Drag to compare before and after image"
+                >
+
+            </div>
+        </div>
+
+        <div class="comparison-stats">
+
+            <div class="stat-card fade-in">
+                <div class="stat-heading">
+                    <p>Sharpness Improvement</p>
+                    <h3>+72%</h3>
+                </div>
+
+                <div class="metric-track">
+                    <span style="width:72%;"></span>
+                </div>
+            </div>
+
+            <div class="stat-card fade-in">
+                <div class="stat-heading">
+                    <p>Noise Reduction</p>
+                    <h3>95%</h3>
+                </div>
+
+                <div class="metric-track">
+                    <span style="width:95%;"></span>
+                </div>
+            </div>
+
+            <div class="stat-card fade-in">
+                <div class="stat-heading">
+                    <p>Color Recovery</p>
+                    <h3>+61%</h3>
+                </div>
+
+                <div class="metric-track">
+                    <span style="width:61%;"></span>
+                </div>
+            </div>
+
+            <div class="stat-card fade-in">
+                <div class="stat-heading">
+                    <p>Resolution Upscaling</p>
+                    <h3>4X</h3>
+                </div>
+
+                <div class="metric-track">
+                    <span style="width:100%;"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+
+        <div class="section-title fade-in">
+            <h2>Powerful Features</h2>
+        </div>
+
+        <div class="features-grid">
+
+            <div class="feature-card fade-in">
+                <h3>Pluggin Upscaling</h3>
+                <p>Increase image resolution without losing quality.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <h3>Noise Removal</h3>
+                <p>Remove unwanted noise and grain from photos.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <h3>Color Enhancement</h3>
+                <p>Improve colors and visual clarity automatically.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <h3>Face Retouching</h3>
+                <p>Enhance facial details while keeping images natural.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section id="stats">
+
+        <div class="section-title fade-in">
+            <h2>Trusted Performance</h2>
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="counter-card fade-in">
+                <h2 class="counter" data-target="5000">0</h2>
+                <p>Images Enhanced</p>
+            </div>
+
+            <div class="counter-card fade-in">
+                <h2 class="counter" data-target="98">0</h2>
+                <p>Satisfied Users</p>
+            </div>
+
+            <div class="counter-card fade-in">
+                <h2 class="counter" data-target="4">0</h2>
+                <p>Resolution Boost</p>
+            </div>
+
+            <div class="counter-card fade-in">
+                <h2 class="counter" data-target="12">0</h2>
+                <p>Processing Time (sec)</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section>
+
+        <div class="section-title fade-in">
+            <h2>How It Works</h2>
+        </div>
+
+        <div class="steps">
+
+            <div class="step fade-in">
+                <h3>1</h3>
+                <p>Upload Image</p>
+            </div>
+
+            <div class="step fade-in">
+                <h3>2</h3>
+                <p>Image Analysis</p>
+            </div>
+
+            <div class="step fade-in">
+                <h3>3</h3>
+                <p>Enhancement</p>
+            </div>
+
+            <div class="step fade-in">
+                <h3>4</h3>
+                <p>Download</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section>
+
+        <div class="section-title fade-in">
+            <h2>User Reviews</h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial-card fade-in">
+                <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <h4>Sarah</h4>
+                <span>Photographer</span>
+                <p>The quality improvement was amazing.</p>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <h4>John</h4>
+                <span>Store Owner</span>
+                <p>Perfect for improving product photos.</p>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <p class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <h4>David</h4>
+                <span>Designer</span>
+                <p>Fast, simple and effective enhancement.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="section-title fade-in">
+            <h2>Contact Us</h2>
+        </div>
+
+        <form class="contact-form fade-in">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                rows="5"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit" class="btn primary-btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>ImageEnhancer</h3>
+
+        <p>
+            Image enhancement for creators,
+            photographers and businesses.
+        </p>
+
+        <p class="copyright">
+            &copy; 2026 All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
